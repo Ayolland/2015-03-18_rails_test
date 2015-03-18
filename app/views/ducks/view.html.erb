@@ -1,18 +1,5 @@
-<h1>Editing <%= @duck.name %></h1>
-<div class="duck box" id="duck<%= @duck.id.to_s %>">
-  <ul>
-    <li>Id: <%= @duck.id.to_s %></li>
-    <li>Name: <%= @duck.name %></li>
-    <li>Description:<br>
-      <p><%= @duck.description %></p>
-    </li>
-    <li>Age: <%= @duck.age.to_s %></li>
-    <li>Gender: <%= @duck.gender.to_s %></li>
-  </ul>
-  <button class="whatever" href="/ducks/edit/<%= @duck.id.to_s %>">
-  Make changes to this Duck
-  </button>
-</div>
+<h1>Viewing <%= @duck.name %></h1>
+<%= render "single" %>
 <button>
   <a href="/ducks/">Back to all Ducks</a>
 </button>

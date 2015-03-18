@@ -7,6 +7,14 @@ RailsTest::Application.routes.draw do
   get "/ducks/edit/:id" => 'ducks#edit'
   put "/ducks/update" => 'ducks#update'
   delete "/ducks/destroy" => 'ducks#destroy'
+  get "/users" => 'users#index'
+  get "/users/new" => 'users#new'
+  post "/users/create" => 'users#create'
+  get "/users/show/:id" => 'users#show'
+  get "/users/edit/:id" => 'users#edit'
+  put "/users/update" => 'users#update'
+  delete "/users/destroy" => 'users#destroy'
+  
   
   
   # The priority is based upon order of creation:
