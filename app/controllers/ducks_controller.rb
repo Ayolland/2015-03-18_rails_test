@@ -30,8 +30,9 @@ class DucksController < ApplicationController
   end
   
   def update
-    @duck = Duck.find(params[:id])
-    @duck.assign_attributes(params)
+    binding.pry
+    @duck = Duck.find(params[:duck][:id])
+    @duck.assign_attributes(params[:duck])
     if @duck.save
       render "view"
     else
@@ -40,7 +41,7 @@ class DucksController < ApplicationController
   end
   
   def destroy
-    @duck = Duck.find(params[:id])
+    @duck = Duck.find(params[:duck][:id])
     @duck.destroy
     redirect to "/"
   end

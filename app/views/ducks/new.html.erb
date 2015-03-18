@@ -1,11 +1,15 @@
+<h1>Creating a new duck</h1>
 <%= form_for @duck, url: {action: "create"}, html: {class: "whatever"} do |f|%>
-<%= f.text_field :name %>
 <%= f.label :name %>
-<%= f.text_field :description %>
+<%= f.text_field :name %>
 <%= f.label :description %>
-<%= f.number_field :age %>
+<%= f.text_field :description %>
 <%= f.label :age %>
-<%= f.number_field :gender %>
+<%= f.number_field :age %>
 <%= f.label :gender %>
+<%= f.number_field :gender %>
 <%= f.submit "Make a Duck" %>
 <% end %>
+<button>
+  <a href="/ducks/">Back to all Ducks</a>
+</button>

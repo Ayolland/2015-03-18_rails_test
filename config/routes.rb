@@ -1,11 +1,12 @@
 RailsTest::Application.routes.draw do
+  get "/" => 'nav#index'
   get "/ducks" => 'ducks#index'
   get "/ducks/new" => 'ducks#new'
   post "/ducks/create" => 'ducks#create'
   get "/ducks/show/:id" => 'ducks#show'
   get "/ducks/edit/:id" => 'ducks#edit'
-  post "/ducks/update/" => 'ducks#update'
-  post "/ducks/destroy/" => 'ducks#destroy'
+  put "/ducks/update" => 'ducks#update'
+  delete "/ducks/destroy" => 'ducks#destroy'
   
   
   # The priority is based upon order of creation:

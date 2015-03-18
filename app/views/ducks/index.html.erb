@@ -1,4 +1,8 @@
-<% @ducks.eah do |duck| %>
+<h1>Viewing all ducks</h1>
+  <button>
+  <a href="/ducks/new/">Make a new Duck</a>
+  </button>
+<% @ducks.each do |duck| %>
 <div class="duck box" id="duck<%= duck.id.to_s %>">
   <ul>
     <li>Id: <%= duck.id.to_s %></li>
@@ -9,9 +13,8 @@
     <li>Age: <%= duck.age.to_s %></li>
     <li>Gender: <%= duck.gender.to_s %></li>
   </ul>
-  <button class="whatever" href="/ducks/edit/<%= duck.id.to_s %>">
-  Make changes to this Duck
+  <button>
+  <a href="/ducks/edit/<%= duck.id.to_s %>">Make changes to this Duck</a>
   </button>
 </div>
-
 <% end %>
