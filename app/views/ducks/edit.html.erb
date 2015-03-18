@@ -1,0 +1,21 @@
+<%= form_for @duck, url: {action: "update"}, html: {class: "whatever"} do |f|%>
+<%= f.number_field :id , html: {"readonly"} %>
+<%= f.label :id %>
+<%= f.text_field :name %>
+<%= f.label :name %>
+<%= f.text_field :description %>
+<%= f.label :description %>
+<%= f.number_field :age %>
+<%= f.label :age %>
+<%= f.number_field :gender %>
+<%= f.label :gender %>
+<%= f.submit "Save changes to this duck" %>
+<% end %>
+<br>
+<%= form_for @duck, url: {action: "destroy"}, html: {class: "whatever"} do |f|%>
+<%= f.number_field :id , html: {"readonly"} %>
+<%= f.label :id %>
+<%= f.text_field :name %>
+<%= f.label :name %>
+<%= f.submit "Save changes to this duck" %>
+<% end %>

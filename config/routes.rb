@@ -1,4 +1,13 @@
 RailsTest::Application.routes.draw do
+  get "/ducks" => 'ducks#index'
+  get "/ducks/new" => 'ducks#new'
+  post "/ducks/create" => 'ducks#create'
+  get "/ducks/show/:id" => 'ducks#show'
+  get "/ducks/edit/:id" => 'ducks#edit'
+  post "/ducks/update/" => 'ducks#update'
+  post "/ducks/destroy/" => 'ducks#destroy'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +64,6 @@ RailsTest::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  
+  
 end
