@@ -1,8 +1,8 @@
 var position = 0;
 
-window.onload = function() {
-  window.setInterval(moveBg, 30);
-};
+// window.onload = function() {
+//   window.setInterval(moveBg, 30);
+// };
 
 function moveBg() {
   position++;

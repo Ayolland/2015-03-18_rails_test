@@ -1,20 +1,10 @@
-<h1>Viewing all ducks</h1>
+<div class="title"><h1>Viewing all ducks</h1></div>
   <button>
   <a href="/ducks/new/">Make a new Duck</a>
   </button>
-<% @ducks.each do |duck| %>
-<div class="duck box" id="duck<%= duck.id.to_s %>">
-  <ul>
-    <li>Id: <%= duck.id.to_s %></li>
-    <li>Name: <%= duck.name %></li>
-    <li>Description:<br>
-      <p><%= duck.description %></p>
-    </li>
-    <li>Age: <%= duck.age.to_s %></li>
-    <li>Gender: <%= duck.gender.to_s %></li>
-  </ul>
-  <button>
-  <a href="/ducks/edit/<%= duck.id.to_s %>">Make changes to this Duck</a>
-  </button>
+<div class="box_wrap">
+  <% @ducks.each do |duck| %>
+    <% @duck = duck %>
+    <%= render 'single' %>
+  <% end %>
 </div>
-<% end %>
