@@ -1,8 +1,0 @@
-<h1>Viewing all users</h1>
-  <button>
-  <a href="/users/new/">Make a new user</a>
-  </button>
-<% @users.each do |user| %>
-  <% @user = user %>
-  <%= render 'single' %>
-<% end %>
