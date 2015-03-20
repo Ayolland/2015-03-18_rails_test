@@ -1,6 +1,11 @@
 <div class="title"><h1>Creating a new user</h1></div>
 <div class="box_wrap">
   <div class="box">
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+    </ul>
     <%= form_for @user, url: {action: "create"}, html: {class: "whatever"} do |f|%>
     <%= f.hidden_field :id %>
     <%= f.label :name %>

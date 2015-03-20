@@ -123,3 +123,12 @@ form {
   text-align: left;
   padding: 1px;
 }
+
+.error{
+  color: white;
+  font-weight: 500;
+}
+
+.field_with_errors input {
+  border: 2px solid darkblue;
+}

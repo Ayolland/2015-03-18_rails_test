@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    binding.pry
     render "index"
   end
   
@@ -12,10 +11,11 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:duck])
+    @user = User.new(params[:user])
     if @user.save
       render "view"
     else
+      binding.pry
       render "new"
     end
   end
@@ -23,6 +23,22 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     render "edit"
+  end
+  
+  def update
+    @user = user.find(params[:user][:id])
+    @user.assign_attributes(params[:user])
+    if @user.save
+      render "view"
+    else
+      render "edit"
+    end
+  end
+  
+  def destroy
+    @user = user.find(params[:user][:id])
+    @user.destroy
+    redirect to "/"
   end
   
 end

@@ -4,9 +4,7 @@ class AddUsers < ActiveRecord::Migration
 
   def change
     drop_table :users
-  end
-
-  def change
+    
     create_table :users do |t|
       t.text :name
       t.text :email

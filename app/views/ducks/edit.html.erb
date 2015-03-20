@@ -1,6 +1,11 @@
 <div class="title"><h1>Editing <%= @duck.name %></h1></div>
 <div class="box_wrap">
   <div class="box">
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+    </ul>
   <%= form_for @duck, url: {action: "update"}, html: {class: "whatever"} do |f|%>
   <%= f.hidden_field :id %>
   <%= f.label :name %>

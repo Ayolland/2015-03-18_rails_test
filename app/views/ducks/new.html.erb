@@ -1,6 +1,11 @@
 <div class="title"><h1>Creating a new duck</h1></div>
 <div class="box_wrap">
   <div class="box">
+    <ul>
+      <% @duck.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+    </ul>
     <%= form_for @duck, url: {action: "create"}, html: {class: "whatever"} do |f|%>
     <%= f.label :name %>
     <%= f.text_field :name %>
