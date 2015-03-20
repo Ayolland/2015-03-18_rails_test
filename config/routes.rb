@@ -1,6 +1,7 @@
 RailsTest::Application.routes.draw do
   get "/" => 'nav#index'
   resources :ducks
+  resources :users, only: [:new, :edit, :index, :create]
 #   get "/ducks" => 'ducks#index'
 #   get "/ducks/new" => 'ducks#new'
 #   post "/ducks/create" => 'ducks#create'

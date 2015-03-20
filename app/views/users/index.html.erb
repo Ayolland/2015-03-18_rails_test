@@ -1,0 +1,10 @@
+<div class="title"><h1>Viewing all users</h1></div>
+  <button>
+  <a href="/users/new/">Make a new user</a>
+  </button>
+<div class="box_wrap">
+  <% @users.each do |user| %>
+    <% @user = user %>
+    <%= render 'single' %>
+  <% end %>
+</div>

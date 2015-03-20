@@ -1,0 +1,20 @@
+<div class="title"><h1>Creating a new user</h1></div>
+<div class="box_wrap">
+  <div class="box">
+    <%= form_for @user, url: {action: "create"}, html: {class: "whatever"} do |f|%>
+    <%= f.hidden_field :id %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Make a user" %>
+    <% end %>
+  </div>
+</div>
+<button>
+  <a href="/users/">Back to all users</a>
+</button>

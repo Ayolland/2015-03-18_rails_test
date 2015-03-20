@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'test-unit'
 gem 'rails', '3.2.21'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
