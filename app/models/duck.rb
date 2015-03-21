@@ -1,7 +1,8 @@
 class Duck < ActiveRecord::Base
   attr_accessible :name, :description, :age, :gender
   
-  has_and_belongs_to_many :users
+  has_many :likes
+  has_many :users, through: :likes
   
   validates :name, presence: true
   validates :age, presence: true
