@@ -1,7 +1,9 @@
 RailsTest::Application.routes.draw do
   get "/" => 'nav#index'
-  resources :ducks
+  resources :ducks 
+  put 'ducks/:id/like' => 'ducks#like'
   resources :users# , only: [:new, :edit, :index, :create]
+  resources :likes, only: [:create, :destroy]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

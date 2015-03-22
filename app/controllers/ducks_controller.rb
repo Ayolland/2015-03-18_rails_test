@@ -30,7 +30,6 @@ class DucksController < ApplicationController
   end
   
   def update
-    binding.pry
     @duck = Duck.find(params[:duck][:id])
     @duck.assign_attributes(params[:duck])
     if @duck.save
@@ -38,6 +37,13 @@ class DucksController < ApplicationController
     else
       render "edit"
     end
+  end
+  
+  def like
+    @duck = Duck.find(params[:duck][:id])
+    binding.pry
+    Like.create(params[:duck])
+    render "view"
   end
   
   def destroy
