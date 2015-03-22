@@ -7,10 +7,14 @@
     </li>
     <li>Age: <%= @duck.age.to_s %></li>
     <li>Gender: <%= @duck.gender.to_s %></li>
+    <% if @duck.users.exists? %>
+      <li>Liked By: <%= @duck.names_of_users.join(", ") %></li>
+    <% end %>
   </ul>
-  <%= form_for Like.new, url: {action: "create"}, html: {class: "whatever"} do |f|%>
-  <%= f.hidden_field :duck_id, {value: @duck.id} %>
-  <%= select_tag(:user_id, options_for_select(User.all.map{|user| [user.name,user.id]})) %>
+  <%= form_for Like.new, url: '/likes', method: 'post', html: {class: "whatever"} do |f|%>
+<!--WHY NOT {action: create} -->
+  <%= f.hidden_field :duck_id, {value:@duck.id} %>
+  <%= f.select(:user_id, options_for_select(User.all.map{|user| [user.name,user.id]})) %>
   <%= f.submit "Like this duck" %>
   <% end %>
   <button>

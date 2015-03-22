@@ -4,6 +4,6 @@ class Like < ActiveRecord::Base
   belongs_to :user
   belongs_to :duck
   
-  validates_associated :user
+  # validates_associated :user #WHY NOT??
   validates_associated :duck
 end

@@ -2,7 +2,7 @@
 <div class="box_wrap">
   <div class="box">
     <ul>
-      <% @user.errors.full_messages.each do |msg| %>
+      <% @duck.errors.full_messages.each do |msg| %>
         <li class="error"><%= msg %></li>
       <% end %>
     </ul>
@@ -18,7 +18,7 @@
   <%= f.number_field :gender %>
   <%= f.submit "Save changes to this duck" %>
   <% end %>
-  <%= form_for @duck, url: {action: "destroy"}, html: {class: "whatever"} do |f|%>
+  <%= form_for @duck, url: {action: "destroy"}, method: 'delete', html: {class: "whatever"} do |f|%>
   <%= f.hidden_field :id %>
   <%= f.submit "Delete this duck" %>
   <% end %>

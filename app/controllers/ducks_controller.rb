@@ -49,7 +49,7 @@ class DucksController < ApplicationController
   def destroy
     @duck = Duck.find(params[:duck][:id])
     @duck.destroy
-    redirect to "/"
+    redirect_to "/"
   end
   
 end

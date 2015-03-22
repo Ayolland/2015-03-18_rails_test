@@ -1,7 +1,11 @@
 RailsTest::Application.routes.draw do
+  get "user_sessions/new"
+
+  get "user_sessions/create"
+
   get "/" => 'nav#index'
   resources :ducks 
-  put 'ducks/:id/like' => 'ducks#like'
+  # put 'ducks/:id/like' => 'ducks#like'
   resources :users# , only: [:new, :edit, :index, :create]
   resources :likes, only: [:create, :destroy]
   

@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true 
   validates :email, presence: true, uniqueness: true #has @ and . ?
   validates :password, presence: true, length: {minimum: 6}, confirmation: true
+  
+  # WHY NOT use rspec?
 end
