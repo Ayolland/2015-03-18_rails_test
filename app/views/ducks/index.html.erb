@@ -8,6 +8,8 @@
   <% @ducks.each do |duck| %>
     <% @duck = duck %>
     <% @format = :short %>
-    <%= render 'single' %>
+    <div class="duck box <%= "liked" if @duck.liked_by?(session[:user_id])%>" id="duck<%= @duck.id.to_s %>">
+      <%= render 'single' %>
+    </div>
   <% end %>
 </div>

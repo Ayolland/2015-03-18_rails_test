@@ -126,6 +126,7 @@ input[type="submit"]:hover {
   background: rgba(174, 206, 212, 0.85);
   font-family: sans-serif;
   margin: 5px;
+  position: relative;
 }
 
 .box.liked {
@@ -137,10 +138,17 @@ a.duck_name {
   color: rgb(42, 84, 93);
 }
 
+.duck.box ul {
+  height: 200px;
+  padding-bottom: 0px;
+}
+
 .box ul {
-    margin: 5px;
+    margin-top: 10px;
     text-align: left;
     padding-right: 40px;
+    overflow: hidden;
+    padding-bottom: 70px;
 }
 
 .hide_me {
@@ -156,8 +164,6 @@ a.duck_name {
 
 .duck.box {
     height: 280px;
-    vertical-align: top;
-    position: relative;
 }
 
 label {

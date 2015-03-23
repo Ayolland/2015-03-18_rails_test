@@ -1,31 +1,36 @@
-<div class="duck box <%= "liked" if @duck.liked_by?(session[:user_id])%>" id="duck<%= @duck.id.to_s %>">
-  <ul>
-    <li>Id: <%= @duck.id.to_s %></li>
-    <li>Name: <a class="duck_name" href="/ducks/<%= @duck.id %>"><%= @duck.name %></a></li>
-    <li>Description:<br>
-      <p>
-        <% if @format == :short  %>
-          <%= @duck.description.truncate(90) %>
-        <% else %>
-          <%= @duck.description %>
-        <% end %>
-      </p>
-    </li>
-    <li>Age: <%= @duck.age.to_s %></li>
-    <li>Gender: <%= @duck.gender.to_s %></li>
-    <li class="<%= "hide_me" if !@duck.users.exists? %>">Liked By: <%= @duck.names_of_users.join(", ") %></li>
-  </ul>
-  <div class="sinker">
-    <% if session[:user_id] && @duck.liked_by?(session[:user_id]) %>
-      <%= render 'unlike_button' %>
-    <% elsif session[:user_id] %>
-      <%= render 'like_button' %>
+<ul>
+  <li>Id: <%= @duck.id.to_s %></li>
+  <li>Name: <a class="duck_name" href="/ducks/<%= @duck.id %>"><%= @duck.name %></a></li>
+  <li>Description:<br>
+    <p>
+      <% if @format == :short  %>
+        <%= @duck.description.truncate(72) %>
+      <% else %>
+        <%= @duck.description %>
+      <% end %>
+    </p>
+  </li>
+  <li>Age: <%= @duck.age.to_s %></li>
+  <li>Gender: <%= @duck.gender.to_s %></li>
+  <li class="<%= "hide_me" if !@duck.users.exists? %>">
+    Liked By: 
+    <% if @format == :short %>
+      <%= @duck.names_of_users_short %>
     <% else %>
+      <%= @duck.names_of_users.join(", ") %>
     <% end %>
-    <% if admin_logged_in? %>
-      <button>
-      <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
-      </button>
-    <% end %>
-  </div>
+  </li>
+</ul>
+<div class="sinker">
+  <% if session[:user_id] && @duck.liked_by?(session[:user_id]) %>
+    <%= render 'unlike_button' %>
+  <% elsif session[:user_id] %>
+    <%= render 'like_button' %>
+  <% else %>
+  <% end %>
+  <% if admin_logged_in? %>
+    <button>
+    <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
+    </button>
+  <% end %>
 </div>

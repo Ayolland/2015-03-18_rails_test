@@ -1,6 +1,8 @@
 <div class="title"><h1>Viewing <%= @duck.name %></h1></div>
 <div class="box_wrap">
-  <%= render 'single' %>
+  <div class="box <%= "liked" if @duck.liked_by?(session[:user_id])%>" id="duck<%= @duck.id.to_s %>">
+    <%= render 'single' %>
+  </div>
 </div>
 <button>
   <a href="/ducks/">Back to all Ducks</a>
