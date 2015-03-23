@@ -1,9 +1,15 @@
 <div class="duck box <%= "liked" if @duck.liked_by?(session[:user_id])%>" id="duck<%= @duck.id.to_s %>">
   <ul>
     <li>Id: <%= @duck.id.to_s %></li>
-    <li>Name: <%= @duck.name %></li>
+    <li>Name: <a href="/ducks/<%= @duck.id %>"><%= @duck.name %></a></li>
     <li>Description:<br>
-      <p><%= @duck.description %></p>
+      <p>
+        <% if @format == :short  %>
+          <%= @duck.description.truncate(90) %>
+        <% else %>
+          <%= @duck.description %>
+        <% end %>
+      </p>
     </li>
     <li>Age: <%= @duck.age.to_s %></li>
     <li>Gender: <%= @duck.gender.to_s %></li>

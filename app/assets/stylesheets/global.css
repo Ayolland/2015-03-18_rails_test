@@ -114,6 +114,11 @@ input[type="submit"]:hover {
   background: rgba(189, 233, 241, 0.85);
 }
 
+.box a {
+  font-weight: bolder;
+  color: rgb(42, 84, 93);
+}
+
 .box ul {
     margin: 5px;
     text-align: left;
