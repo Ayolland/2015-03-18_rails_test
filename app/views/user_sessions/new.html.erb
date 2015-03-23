@@ -1,0 +1,15 @@
+<div class="title"><h1>Log in</h1></div>
+<div class="box_wrap">
+  <div class="box">
+    <%= form_tag ('/authenticate') do %> 
+      <%= label_tag :email, "Email:" %>
+      <%= text_field_tag :email, params[:email] %>
+      <%= label_tag :password, "Password:" %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Log in" %>
+    <% end %>
+  </div>
+</div>
+<button>
+  <a href="/users/new">Create a New User</a>
+</button>

@@ -9,6 +9,32 @@ body{
   text-align: center;
 }
 
+.top {
+  height: 30px;
+  width: 100%;
+  background: rgb(42, 84, 93);
+}
+
+.top p {
+  float: left;
+  position: absolute;
+  margin: 6px;
+  font-family: sans-serif;
+  color: lightgrey;
+}
+
+.top a {
+  float: right;
+  margin: 6px;
+  font-family: sans-serif;
+  color: lightgrey;
+  text-decoration: none;
+}
+
+.top a:hover{
+  letter-spacing: 1px;
+}
+
 .title{
   background: white;
   font-family: sans-serif;
