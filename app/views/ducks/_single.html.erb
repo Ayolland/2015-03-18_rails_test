@@ -16,8 +16,10 @@
       <%= render 'like_button' %>
     <% else %>
     <% end %>
-    <button>
-    <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
-    </button>
+    <% if admin_logged_in? %>
+      <button>
+      <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
+      </button>
+    <% end %>
   </div>
 </div>

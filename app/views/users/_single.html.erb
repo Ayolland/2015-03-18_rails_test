@@ -3,7 +3,9 @@
     <li>Id: <%= @user.id.to_s %></li>
     <li>Name: <%= @user.name %></li>
   </ul>
-  <button>
-  <a href="/duser/<%= @user.id.to_s %>/edit/">Make changes to this user</a>
-  </button>
+  <% if @user.id == session[:user_id] || admin_logged_in? %>
+    <button>
+    <a href="/user/<%= @user.id.to_s %>/edit/">Make changes to this user</a>
+    </button>
+  <% end %>
 </div>

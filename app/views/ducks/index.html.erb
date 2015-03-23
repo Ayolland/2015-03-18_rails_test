@@ -1,7 +1,9 @@
 <div class="title"><h1>Viewing all ducks</h1></div>
-  <button>
-  <a href="/ducks/new/">Make a new Duck</a>
-  </button>
+  <% if admin_logged_in? %>
+    <button>
+    <a href="/ducks/new/">Make a new Duck</a>
+    </button>
+  <% end %>
 <div class="box_wrap">
   <% @ducks.each do |duck| %>
     <% @duck = duck %>

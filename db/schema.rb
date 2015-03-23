@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150320235255) do
+ActiveRecord::Schema.define(:version => 20150323150319) do
 
   create_table "ducks", :force => true do |t|
     t.text     "name"
@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(:version => 20150320235255) do
     t.text     "name"
     t.text     "email"
     t.text     "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "admin",           :default => false
   end
 
 end
