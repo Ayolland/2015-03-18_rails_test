@@ -8,9 +8,9 @@
     </ul>
     <%= form_for @duck, url: {action: "create"}, html: {class: "whatever"} do |f|%>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, size: "40x10" %>
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
     <%= f.label :age %>
     <%= f.number_field :age %>
     <%= f.label :gender %>

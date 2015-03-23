@@ -78,11 +78,16 @@ button {
 }
 
 button a {
+  font-weight: bold;
   display: block;
   width: 100%;
   color: black;
   text-decoration: none;
   text-transform: lowercase;
+}
+
+.box button a{
+  color: rgb(42, 84, 93);
 }
 
 button:hover {
@@ -117,7 +122,7 @@ input[type="submit"]:hover {
 .box {
   text-align: left;
   display: inline-block;
-  width: 400px;
+  width: 380px;
   background: rgba(174, 206, 212, 0.85);
   font-family: sans-serif;
   margin: 5px;
@@ -127,8 +132,8 @@ input[type="submit"]:hover {
   background: rgba(189, 233, 241, 0.85);
 }
 
-.box a {
-  font-weight: bolder;
+a.duck_name {
+  font-weight: bold;
   color: rgb(42, 84, 93);
 }
 
@@ -146,6 +151,7 @@ input[type="submit"]:hover {
     position: absolute;
     width: 100%;
     bottom: 0;
+    margin-bottom: 5px;
 }
 
 .duck.box {
@@ -163,16 +169,23 @@ label {
 input {
     display: block;
     width: 92%;
-    margin-left: 4%;
-    margin-right: 4%;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
+textarea#duck_description {
+  display: block;
+  width: 92%;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 input[type="submit"] {
   font-size: 20px;
-  background: white;
+  font-weight: bold;
+  color: rgb(42, 84, 93);
   border: 0px;
   box-shadow: 3px 3px 0px rgb(56, 113, 123);
   background: rgb(131, 171, 199);

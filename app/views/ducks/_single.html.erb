@@ -1,7 +1,7 @@
 <div class="duck box <%= "liked" if @duck.liked_by?(session[:user_id])%>" id="duck<%= @duck.id.to_s %>">
   <ul>
     <li>Id: <%= @duck.id.to_s %></li>
-    <li>Name: <a href="/ducks/<%= @duck.id %>"><%= @duck.name %></a></li>
+    <li>Name: <a class="duck_name" href="/ducks/<%= @duck.id %>"><%= @duck.name %></a></li>
     <li>Description:<br>
       <p>
         <% if @format == :short  %>
