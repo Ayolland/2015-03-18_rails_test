@@ -35,6 +35,19 @@ body{
   letter-spacing: 1px;
 }
 
+.upwards {
+  width: 45px;
+  height: 45px;
+  background: rgb(42, 84, 93);
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  line-height: 1.7;
+  font-size: 36px;
+  font-weight: 900;
+  color: white;
+}
+
 .title{
   background: white;
   font-family: sans-serif;
