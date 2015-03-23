@@ -13,7 +13,8 @@ class Duck < ActiveRecord::Base
   end
   
   def liked_by?(user_id)
-    self.likes.includes?(User.find(input))
+    return false if user_id == nil
+    self.users.include?(User.find(user_id))
   end
   
 end

@@ -1,4 +1,4 @@
-<div class="duck box" id="duck<%= @duck.id.to_s %>">
+<div class="duck box <%= "liked" if @duck.liked_by?(session[:user_id])%>" id="duck<%= @duck.id.to_s %>">
   <ul>
     <li>Id: <%= @duck.id.to_s %></li>
     <li>Name: <%= @duck.name %></li>
@@ -7,17 +7,17 @@
     </li>
     <li>Age: <%= @duck.age.to_s %></li>
     <li>Gender: <%= @duck.gender.to_s %></li>
-    <% if @duck.users.exists? %>
-      <li>Liked By: <%= @duck.names_of_users.join(", ") %></li>
-    <% end %>
+    <li class="<%= "hide_me" if !@duck.users.exists? %>">Liked By: <%= @duck.names_of_users.join(", ") %></li>
   </ul>
-  <%= form_for Like.new, url: '/likes', method: 'post', html: {class: "whatever"} do |f|%>
-<!--WHY NOT {action: create} -->
-  <%= f.hidden_field :duck_id, {value:@duck.id} %>
-  <%= f.select(:user_id, options_for_select(User.all.map{|user| [user.name,user.id]})) %>
-  <%= f.submit "Like this duck" %>
-  <% end %>
-  <button>
-  <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
-  </button>
+  <div class="sinker">
+    <% if session[:user_id] && @duck.liked_by?(session[:user_id]) %>
+      <%= render 'unlike_button' %>
+    <% elsif session[:user_id] %>
+      <%= render 'like_button' %>
+    <% else %>
+    <% end %>
+    <button>
+    <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
+    </button>
+  </div>
 </div>

@@ -110,9 +110,30 @@ input[type="submit"]:hover {
   margin: 5px;
 }
 
+.box.liked {
+  background: rgba(189, 233, 241, 0.85);
+}
+
 .box ul {
-    margin: 0px;
+    margin: 5px;
     text-align: left;
+    padding-right: 40px;
+}
+
+.hide_me {
+  visibility: hidden;
+}
+
+.sinker {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.duck.box {
+    height: 280px;
+    vertical-align: top;
+    position: relative;
 }
 
 label {
