@@ -8,13 +8,13 @@
     </ul>
     <%= form_for @duck, url: {action: "create"}, html: {class: "whatever"} do |f|%>
     <%= f.label :name %>
-    <%= f.text_field :name, size: "40x10" %>
+    <%= f.text_field :name %>
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, options = {cols: 40, rows: 8} %>
     <%= f.label :age %>
     <%= f.number_field :age %>
     <%= f.label :gender %>
-    <%= f.number_field :gender %>
+    <%= f.select(:gender, ['Drake','Hen','Unknown'],{},{}) %>
     <%= f.submit "Make a Duck" %>
     <% end %>
   </div>

@@ -6,22 +6,22 @@
         <li class="error"><%= msg %></li>
       <% end %>
     </ul>
-  <%= form_for @duck, url: {action: "update"}, html: {class: "whatever"} do |f|%>
-  <%= f.hidden_field :id %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_area :description, size: "40x10" %>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-  <%= f.label :gender %>
-  <%= f.number_field :gender %>
-  <%= f.submit "Save changes to this duck" %>
-  <% end %>
-  <%= form_for @duck, url: {action: "destroy"}, method: 'delete', html: {class: "whatever"} do |f|%>
-  <%= f.hidden_field :id %>
-  <%= f.submit "Delete this duck" %>
-  <% end %>
+    <%= form_for @duck, url: {action: "update"}, html: {class: "whatever"} do |f|%>
+    <%= f.hidden_field :id %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_area :description, options = {cols: 40, rows: 8} %>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+    <%= f.label :gender %>
+    <%= f.select(:gender, ['Drake','Hen','Unknown'],{},{}) %>
+    <%= f.submit "Save changes to this duck" %>
+    <% end %>
+    <%= form_for @duck, url: {action: "destroy"}, method: 'delete', html: {class: "whatever"} do |f|%>
+    <%= f.hidden_field :id %>
+    <%= f.submit "Delete this duck" %>
+    <% end %>
   </div>
 </div>
 <button>

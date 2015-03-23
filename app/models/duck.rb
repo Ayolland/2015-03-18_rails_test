@@ -5,8 +5,6 @@ class Duck < ActiveRecord::Base
   has_many :users, through: :likes
   
   validates :name, presence: true
-  validates :age, presence: true
-  validates :gender, numericality: {only_integer: true, less_than: 3}
   
   def names_of_users
     self.likes.map{|like| User.find(like.user_id).name}
