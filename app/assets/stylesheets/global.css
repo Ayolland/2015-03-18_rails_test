@@ -128,6 +128,7 @@ input[type="submit"]:hover {
   font-family: sans-serif;
   margin: 5px;
   position: relative;
+  z-index: 4;
 }
 
 .box.liked {
