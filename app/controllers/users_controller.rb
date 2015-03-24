@@ -12,11 +12,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    binding.pry
     if @user.save
       render "view"
     else
-      binding.pry
       render "new"
     end
   end
