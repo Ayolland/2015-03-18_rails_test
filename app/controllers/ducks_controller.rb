@@ -41,7 +41,6 @@ class DucksController < ApplicationController
   
   def like
     @duck = Duck.find(params[:duck][:id])
-    binding.pry
     Like.create(params[:duck])
     render "view"
   end
