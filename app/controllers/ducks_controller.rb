@@ -52,4 +52,9 @@ class DucksController < ApplicationController
     redirect_to "/"
   end
   
+  def sort
+    @ducks = Duck.order(params[:sort])
+    render "index"
+  end
+  
 end

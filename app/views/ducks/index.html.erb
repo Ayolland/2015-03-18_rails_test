@@ -1,11 +1,16 @@
 <div class="title"><h1>Viewing all ducks</h1></div>
+  <div id="sorter">
+    <%= form_tag "/ducks/sort", method: 'post', class: "sorter_form" do %>
+      <%= label_tag :sort, "sort ducks by:" %>
+      <%= select_tag :sort, options_for_select(["Id","Name","Gender","Age"]), :onchange => "this.form.submit();"%>
+    <% end %>
+  </div>
   <% if admin_logged_in? %>
     <button>
     <a href="/ducks/new/">Make a new Duck</a>
     </button>
   <% end %>
 <div class="box_wrap">
-
   <% @ducks.each do |duck| %>
     <% @duck = duck %>
     <% @format = :short %>

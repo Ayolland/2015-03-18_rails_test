@@ -7,7 +7,7 @@ RailsTest::Application.routes.draw do
   get "/logout" => 'user_sessions#destroy'
   
   resources :ducks 
-  # put 'ducks/:id/like' => 'ducks#like'
+  post "/ducks/sort" => 'ducks#sort'
   
   resources :users# , only: [:new, :edit, :index, :create]
   resources :likes, only: [:create, :destroy]

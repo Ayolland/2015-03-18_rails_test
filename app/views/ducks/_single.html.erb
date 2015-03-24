@@ -3,9 +3,7 @@
   <li>Name: <a class="duck_name" href="/ducks/<%= @duck.id %>"><%= @duck.name %></a></li>
   <li>Description:<br>
     <p>
-      <% if @format == :short  %>
-        <%= @duck.description.truncate(72) %>
-      <% else %>
+      <% if @format != :short  %>
         <%= @duck.description %>
       <% end %>
     </p>
@@ -30,7 +28,7 @@
   <% end %>
   <% if admin_logged_in? %>
     <button>
-    <a href="/ducks/<%= @duck.id.to_s %>/edit/">Make changes to this Duck</a>
+    <a href="/ducks/<%= @duck.id.to_s %>/edit/">edit this Duck</a>
     </button>
   <% end %>
 </div>

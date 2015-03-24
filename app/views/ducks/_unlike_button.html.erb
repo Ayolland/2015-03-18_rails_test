@@ -1,4 +1,5 @@
-  <%= form_for Like.new, url: '/likes', method: 'delete', html: {class: "whatever"} do |f|%>
+  <% @like = Like.where(user_id: session[:user_id], duck_id: @duck.id).first  %>
+  <%= form_for @like, url: '/likes/' + @like.id.to_s, method: 'delete', html: {class: "whatever"} do |f|%>
 <!--WHY NOT {action: create} -->
   <%= f.hidden_field :duck_id, {value:@duck.id} %>
   <%= f.hidden_field :user_id, {value:session[:user_id]} %>

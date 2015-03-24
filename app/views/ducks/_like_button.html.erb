@@ -1,4 +1,4 @@
-<%= form_for Like.new, url: '/likes', method: 'post', html: {class: "whatever"} do |f|%>
+<%= form_for Like.new, html: {class: "whatever"} do |f|%>
 <!--WHY NOT {action: create} -->
 <%= f.hidden_field :duck_id, {value:@duck.id} %>
 <%= f.hidden_field :user_id, {value:session[:user_id]} %>
