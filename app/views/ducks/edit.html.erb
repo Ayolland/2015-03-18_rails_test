@@ -16,7 +16,7 @@
     <%= f.number_field :age %>
     <%= f.label :gender %>
     <%= f.select(:gender, ['Drake','Hen','Unknown'],{},{}) %>
-    <%= f.submit "Save changes to this duck" %>
+    <%= f.submit "Save these changes" %>
     <% end %>
     <%= form_for @duck, url: {action: "destroy"}, method: 'delete', html: {class: "whatever"} do |f|%>
     <%= f.hidden_field :id %>
