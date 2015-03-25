@@ -13,7 +13,7 @@ window.onload = function() {
   duck3 = new duck(duck3Img,'greenduckalive.gif','greenduckdead.gif');
   duck3Img.addEventListener("click",function(){killDuck(duck3)});
   initDuck(duck3)
-  // window.setInterval(doItAll, 30);
+  window.setInterval(doItAll, 30);
 };
 
 function doItAll() {
