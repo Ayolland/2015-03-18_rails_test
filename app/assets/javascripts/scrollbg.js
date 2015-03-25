@@ -18,9 +18,11 @@ window.onload = function() {
 
 function doItAll() {
   moveBg();
-  moveDuck(duck1);
-  moveDuck(duck2);
-  moveDuck(duck3);
+  if(window.innerWidth >= 800 && window.innerHeight >= 600) {
+    moveDuck(duck1);
+    moveDuck(duck2);
+    moveDuck(duck3);
+  }
 };
 
 function initDuck(duck){
