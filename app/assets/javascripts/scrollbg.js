@@ -2,15 +2,15 @@
 window.onload = function() {
   bgPosition = 0;
   duck1Img = document.getElementById("purple_duck");
-  duck1 = new duck(duck1Img,'prplduckright.gif','prplduckright.gif','prplduckdead.gif');
+  duck1 = new duck(duck1Img,'blueduckalive.gif','blueduckdead.gif');
   duck1Img.addEventListener("click",function(){killDuck(duck1)});
   initDuck(duck1);
   duck2Img = document.getElementById("brown_duck");
-  duck2 = new duck(duck2Img,'brownduckright.gif','brownduckright.gif','brownduckdead.gif');
+  duck2 = new duck(duck2Img,'redduckalive.gif','redduckdead.gif');
   duck2Img.addEventListener("click",function(){killDuck(duck2)});
   initDuck(duck2);
   duck3Img = document.getElementById("black_duck");
-  duck3 = new duck(duck3Img,'blackduckright.gif','blackduckright.gif','blackduckdead.gif');
+  duck3 = new duck(duck3Img,'greenduckalive.gif','greenduckdead.gif');
   duck3Img.addEventListener("click",function(){killDuck(duck3)});
   initDuck(duck3)
   window.setInterval(doItAll, 30);
@@ -51,10 +51,9 @@ function coinToss(){
   if (coin < 0.5){ return 1; };
 };
 
-function duck(htmlElement,rSrc,lSrc,dSrc) {
+function duck(htmlElement,rSrc,dSrc) {
   this.img = htmlElement;
   this.rSrc = rSrc;
-  this.lSrc = lSrc;
   this.dSrc = dSrc;
   this.outOfBounds = function(){
     if (this.xPos < -66 || this.xPos > window.innerWidth + 66){

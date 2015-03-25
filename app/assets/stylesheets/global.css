@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 body{
-  background-image: url("ducks.gif");
-  background-size: 190px;
+  background-image: url("duck_small.gif");
   margin: 15px;
   text-align: center;
 }
@@ -16,7 +15,7 @@ body{
 }
 
 .grass {
-  background: url("/assets/reeds.png") bottom left fixed;
+  background: url("/assets/reeds.png") bottom left repeat-x fixed;
   position: fixed;
   bottom: 0;
   height: 50px;
