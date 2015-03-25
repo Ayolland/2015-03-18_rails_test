@@ -269,3 +269,8 @@ select#sort {
     background: rgb(219, 219, 219);
     box-shadow: 3px 3px rgb(56, 113, 123);
 }
+
+div#blocker {
+  height: 35px;
+  visibility: hidden;
+}
