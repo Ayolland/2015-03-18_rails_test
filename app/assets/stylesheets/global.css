@@ -15,6 +15,16 @@ body{
   background: rgb(42, 84, 93);
 }
 
+.grass {
+  background: url("/assets/reeds.png") bottom left fixed;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 3;
+  margin-left: -15px;
+}
+
 .top p {
   float: left;
   position: absolute;
@@ -46,6 +56,7 @@ body{
   font-size: 36px;
   font-weight: 900;
   color: white;
+  z-index: 5;
 }
 
 .title{
@@ -143,6 +154,10 @@ a.duck_name {
 .duck.box ul {
   height: 200px;
   padding-bottom: 0px;
+}
+
+div#single_duck {
+  width: 95%;
 }
 
 .box#single_duck ul {
@@ -249,7 +264,7 @@ label {
 }
 
 select#sort {
-    width: 150px;
+    width: 100px;
     background: rgb(219, 219, 219);
     box-shadow: 3px 3px rgb(56, 113, 123);
 }

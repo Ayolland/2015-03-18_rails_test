@@ -25,8 +25,8 @@ function doItAll() {
 
 function initDuck(duck){
   duck.img.style.position = "fixed";
-  duck.img.style.top = "0px"
-  duck.img.style.left = "0px"
+  duck.img.style.top = "-34px"
+  duck.img.style.left = "-34px"
 };
 
 function moveDuck(duck){
@@ -70,7 +70,7 @@ function duck(htmlElement,rSrc,lSrc,dSrc) {
     if ( this.dir == 1 ){ this.xPos = -66; };
     if ( this.dir == -1 ){ this.xPos = window.innerWidth + 66; };
     this.yPos = randIntBtwn(5,window.innerHeight-60);
-    this.xVel = Math.random() * 2 * this.dir;
+    this.xVel = Math.random() * 1.7 * this.dir + 0.3;
     this.yVel = Math.random() * coinToss() * 0.5;
     this.yAcc = 0;
     this.xAcc = Math.random() * 0.02 *this.dir;
@@ -106,8 +106,8 @@ function duck(htmlElement,rSrc,lSrc,dSrc) {
 function moveBg() {
   bgPosition++;
   if (bgPosition > 190){ bgPosition = 0 };
-  var pos_string = bgPosition + "px";
-  document.body.style.backgroundPosition = pos_string + " -" + pos_string
+  var yFiddled = bgPosition + (window.scrollY * 0.5);
+  document.body.style.backgroundPosition = bgPosition + "px -" + yFiddled + "px";
 };
 //
 // function hideThePurpleDuck(){

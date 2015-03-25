@@ -11,7 +11,7 @@
   <li>Age: <%= @duck.age.to_s %></li>
   <li>Gender: <%= @duck.gender.to_s %></li>
   <li class="<%= "hide_me" if !@duck.users.exists? %>">
-    Liked By: 
+    Liked By: <br>
     <% if @format == :short %>
       <%= @duck.names_of_users_short %>
     <% else %>
